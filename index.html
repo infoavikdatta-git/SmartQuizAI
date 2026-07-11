@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SmartQuiz AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="school-banner">
+
+<img src="logo.png" alt="Delhi Public School logo" class="school-logo">
+
+<div class="school-info">
+
+<h1>Delhi Public School, Haridwar</h1>
+
+<p>Student Name: Priyam Das</p>
+
+</div>
+
+</header>
+
+<div class="glass-card">
+
+<h1>SmartQuiz AI</h1>
+
+<p class="subtitle">
+AI Powered Intelligent Quiz Generator
+</p>
+
+<!-- ========================= -->
+<h2>Choose Question Source</h2>
+
+<div class="source-cards">
+
+   <div class="source-card active" id="aiCard">
+
+    <div class="icon">
+        <img src="ai_image.png" alt="Generate Using AI">
+    </div>
+
+    <h3>Generate Using AI</h3>
+
+    <p>
+        Create quizzes from any topic or prompt
+    </p>
+
+</div>
+
+    <div class="source-card" id="uploadCard">
+
+    <div class="icon">
+        <img src="file_upload_image.png" alt="Upload Study Material">
+    </div>
+
+    <h3>Upload Study Material</h3>
+
+    <p>
+        Generate quizzes from uploaded files
+    </p>
+
+</div>
+
+</div>
+
+
+
+<!-- ========================= -->
+
+<div id="aiSection">
+
+<h3>AI Quiz Configuration</h3>
+
+<label>Topic</label>
+
+<input
+type="text"
+id="topic"
+placeholder="Example : Solar System">
+
+<label>Category</label>
+
+<select id="category">
+
+<option>General Knowledge</option>
+<option>Science</option>
+<option>Mathematics</option>
+<option>History</option>
+<option>Geography</option>
+<option>English</option>
+<option>Computer</option>
+<option>Sports</option>
+
+</select>
+
+<label>Difficulty</label>
+
+<select id="difficulty">
+
+<option>Easy</option>
+<option selected>Medium</option>
+<option>Hard</option>
+
+</select>
+
+<label>Number of Questions</label>
+
+<select id="questionCount">
+
+<option>5</option>
+<option selected>10</option>
+<option>15</option>
+<option>20</option>
+
+</select>
+
+<button id="generateAI">Generate Quiz
+</button>
+
+</div>
+
+<!-- ========================= -->
+
+<div id="uploadSection" style="display:none;">
+
+<h3>Upload Study Material</h3>
+
+<input
+type="file"
+id="studyFile"
+accept=".pdf,.docx,.txt">
+
+<div class="supported">
+
+<b>Supported Formats</b>
+
+<p>PDF | DOCX | TXT</p>
+
+</div>
+
+<label>Difficulty</label>
+
+<select id="uploadDifficulty">
+
+<option>Easy</option>
+<option selected>Medium</option>
+<option>Hard</option>
+
+</select>
+
+<label>Number of Questions</label>
+
+<select id="uploadQuestionCount">
+
+<option>5</option>
+<option selected>10</option>
+<option>15</option>
+<option>20</option>
+
+</select>
+
+<button id="generateUpload">Generate Quiz
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+
+<div id="loadingScreen" style="display:none;">
+
+<div class="loader-card">
+
+<h2>Generating Quiz...</h2>
+
+<p>Please wait while AI prepares your questions.</p>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+
+<div id="quizScreen" style="display:none;">
+
+<div class="glass-card">
+
+<h2 id="progress"></h2>
+
+<div id="timer"></div>
+
+<h3 id="question"></h3>
+
+<div id="options"></div>
+
+</div>
+
+</div>
+
+<!-- ========================= -->
+
+<div id="resultScreen" style="display:none;">
+
+<div class="glass-card">
+
+<h2>Quiz Result</h2>
+
+<h1 id="score"></h1>
+
+<p id="percentage"></p>
+
+<p id="correct"></p>
+
+<p id="wrong"></p>
+
+<p id="skipped"></p>
+
+<div id="review"></div>
+
+</div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>pdfjsLib.GlobalWorkerOptions.workerSrc ="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="app.js"></script>
+<script src="config.js"></script>
+<script src="aiQuiz.js"></script>
+<script src="uploadQuiz.js"></script>
+<script src="quizEngine.js"></script>
+<script src="result.js"></script>
+
+</body>
+
+</html>
+

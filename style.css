@@ -1,0 +1,762 @@
+/* ==============================
+   SmartQuiz AI
+   style.css
+================================ */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:
+    linear-gradient(rgba(5,10,30,.18),rgba(5,10,30,.52)),
+    url("background_image.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:11px 13px;
+
+    color:white;
+}
+
+body.screen-active{
+
+    align-items:flex-start;
+
+}
+
+/* ============================ */
+
+.container{
+
+    width:100%;
+    max-width:920px;
+
+}
+
+.school-banner{
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+    width:100%;
+    min-height:96px;
+    margin-bottom:12px;
+    padding:12px 44px;
+    color:#000000;
+    background:#27c5e2;
+    border-radius:0;
+    box-shadow:0 12px 30px rgba(0,0,0,.28);
+
+}
+
+.school-logo{
+
+    width:78px;
+    height:78px;
+    object-fit:contain;
+    flex:0 0 auto;
+
+}
+
+.school-info h1{
+
+    margin:0 0 8px;
+    color:#000000;
+    text-align:left;
+    font-size:24px;
+    line-height:1.2;
+
+}
+
+.school-info p{
+
+    color:#000000;
+    font-size:17px;
+    font-weight:700;
+    line-height:1.2;
+
+}
+
+#loadingScreen,
+#quizScreen,
+#resultScreen{
+
+    width:100%;
+    max-width:850px;
+
+}
+
+/* ============================ */
+
+.glass-card{
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    border-radius:20px;
+
+    padding:24px 28px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.45);
+
+    animation:fadeIn .6s ease;
+
+}
+
+/* ============================ */
+
+h1{
+
+    text-align:center;
+
+    font-size:34px;
+
+    margin-bottom:10px;
+
+    color:#ffffff;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#dddddd;
+
+    margin-bottom:22px;
+
+}
+
+/* ============================ */
+
+h2{
+
+    margin-bottom:10px;
+
+    color:#ffffff;
+
+}
+
+h3{
+
+    margin-top:16px;
+    margin-bottom:10px;
+
+}
+
+/* ============================ */
+
+.source-selection{
+
+    display:flex;
+
+    gap:16px;
+
+    margin-bottom:25px;
+
+    flex-wrap:wrap;
+
+}
+
+.source-selection label{
+
+    cursor:pointer;
+
+    font-weight:500;
+
+}
+
+/* ============================ */
+
+label{
+
+    display:block;
+
+    margin-top:12px;
+
+    margin-bottom:8px;
+
+    font-weight:500;
+
+}
+
+/* ============================ */
+
+input[type=text],
+select,
+input[type=file]{
+
+    width:100%;
+
+    padding:11px 13px;
+
+    border:none;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:14px;
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+}
+
+input::placeholder{
+
+    color:#dddddd;
+
+}
+
+select option{
+
+    color:black;
+
+}
+
+/* ============================ */
+
+.supported{
+
+    margin-top:14px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.08);
+
+    line-height:1.6;
+
+}
+
+/* ============================ */
+
+button{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    color:white;
+
+    background:
+    linear-gradient(90deg,#0066ff,#00bfff);
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 20px rgba(0,150,255,.45);
+
+}
+
+/* ============================ */
+
+#progress{
+
+    font-size:18px;
+
+    margin-bottom:10px;
+
+}
+
+#timer{
+
+    font-size:19px;
+
+    font-weight:600;
+
+    color:#ffe066;
+
+    margin-bottom:16px;
+
+}
+
+#question{
+
+    font-size:21px;
+
+    margin-bottom:16px;
+
+    line-height:1.5;
+
+}
+
+/* ============================ */
+
+.option{
+
+    width:100%;
+
+    margin-bottom:10px;
+
+    text-align:left;
+
+    padding:12px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.20);
+
+}
+
+.option:hover{
+
+    background:#008cff;
+
+}
+
+.option.correct{
+
+    background:rgba(0,190,120,.85);
+    border-color:#66ff99;
+
+}
+
+.option.wrong{
+
+    background:rgba(220,55,70,.85);
+    border-color:#ff9a9a;
+
+}
+
+.option:disabled{
+
+    cursor:not-allowed;
+    transform:none;
+
+}
+
+.quiz-actions{
+
+    display:flex;
+    gap:15px;
+    margin-top:25px;
+
+}
+
+.quiz-actions button{
+
+    margin-top:0;
+
+}
+
+.secondary-button{
+
+    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.22);
+
+}
+
+/* ============================ */
+
+.loader-card{
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    padding:28px;
+
+    text-align:center;
+
+    animation:fadeIn .5s;
+
+}
+
+/* ============================ */
+
+#score{
+
+    font-size:42px;
+
+    color:#00ff99;
+
+    margin-top:12px;
+
+    margin-bottom:12px;
+
+    text-align:center;
+
+}
+
+#percentage{
+
+    text-align:center;
+
+    font-size:19px;
+
+    margin-bottom:14px;
+
+}
+
+#correct{
+
+    color:#66ff99;
+
+}
+
+#wrong{
+
+    color:#ff8080;
+
+}
+
+#skipped{
+
+    color:#ffd966;
+
+}
+
+/* ============================ */
+
+#review{
+
+    margin-top:24px;
+
+}
+
+#review p{
+
+    line-height:1.8;
+
+}
+
+.review-item{
+
+    padding:18px 0;
+    border-top:1px solid rgba(255,255,255,.15);
+
+}
+
+.review-item:first-child{
+
+    border-top:none;
+
+}
+
+.review-item strong{
+
+    display:block;
+    margin-bottom:6px;
+
+}
+
+hr{
+
+    margin:20px 0;
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+}
+
+/* ============================ */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ============================ */
+
+@media(max-width:768px){
+
+    body{
+
+        padding:18px;
+
+    }
+
+    .school-banner{
+
+        min-height:auto;
+        padding:16px;
+        gap:14px;
+
+    }
+
+    .school-logo{
+
+        width:78px;
+        height:78px;
+
+    }
+
+    .school-info h1{
+
+        font-size:20px;
+        margin-bottom:8px;
+
+    }
+
+    .school-info p{
+
+        font-size:15px;
+
+    }
+
+    .glass-card{
+
+        padding:22px;
+
+    }
+
+    h1{
+
+        font-size:30px;
+
+    }
+
+    #question{
+
+        font-size:20px;
+
+    }
+
+    .source-selection{
+
+        flex-direction:column;
+
+        gap:10px;
+
+    }
+
+}
+/*==============================
+
+Source Cards
+
+===============================*/
+
+.source-cards{
+
+    display:flex;
+
+    gap:25px;
+
+    margin:18px 0;
+
+    flex-wrap:wrap;
+
+}
+
+.source-card{
+
+    flex:1;
+
+    min-width:220px;
+
+    padding:20px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.08);
+
+    border:2px solid transparent;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    text-align:center;
+
+}
+
+.source-card:hover{
+
+    transform:translateY(-3px);
+
+    border-color:#00bfff;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,191,255,.35);
+
+}
+
+.source-card.active{
+
+    border:2px solid #00bfff;
+
+    background:
+
+    rgba(0,191,255,.18);
+
+    box-shadow:
+
+    0 0 25px rgba(0,191,255,.45);
+
+}
+
+.source-card .icon{
+
+    font-size:42px;
+
+    margin-bottom:12px;
+
+}
+
+.source-card h3{
+
+    margin-bottom:8px;
+
+}
+
+.source-card p{
+
+    color:#dddddd;
+
+    line-height:1.45;
+
+}
+
+@media(max-width:768px){
+
+    body{
+        padding:10px;
+        align-items:flex-start;
+    }
+
+    .container{
+        max-width:100%;
+    }
+
+    .school-banner{
+        margin-bottom:10px;
+        padding:10px 14px;
+    }
+
+    .school-logo{
+        width:60px;
+        height:60px;
+    }
+
+    .school-info h1{
+        font-size:17px;
+    }
+
+    .school-info p{
+        font-size:13px;
+    }
+
+    .glass-card{
+        padding:18px;
+        border-radius:14px;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    h3{
+        font-size:17px;
+    }
+
+    .subtitle{
+        margin-bottom:16px;
+        font-size:14px;
+    }
+
+    .source-cards{
+        gap:12px;
+        margin:14px 0;
+    }
+
+    .source-card{
+        min-width:100%;
+        padding:16px;
+    }
+
+    .source-card .icon{
+        font-size:34px;
+        margin-bottom:8px;
+    }
+
+    .source-card p{
+        font-size:13px;
+    }
+
+    input[type=text],
+    select,
+    input[type=file]{
+        padding:10px 12px;
+    }
+
+    button{
+        margin-top:16px;
+        padding:11px;
+    }
+
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.icon img {
+    width: 100px;      /* Adjust if needed */
+    height: 100px;
+    object-fit: contain;
+    display: block;
+}
