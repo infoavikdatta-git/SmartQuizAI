@@ -89,18 +89,16 @@ function validateQuestions(questions,count){
 
 async function generateQuestionsWithAI(settings){
 
-    if(!GROQ_API_KEY || GROQ_API_KEY==="PASTE_YOUR_GROQ_API_KEY_HERE"){
-        throw new Error("Please paste your Groq API key in config.js first.");
-    }
+   
 
-    const response=await fetch("https://api.groq.com/openai/v1/chat/completions",{
+    const response=await fetch("https://smartquiz-api.infoavikdatta.workers.dev",{
         method:"POST",
         headers:{
-            "Content-Type":"application/json",
-            "Authorization":`Bearer ${GROQ_API_KEY}`
+            "Content-Type":"application/json"
+            
         },
         body:JSON.stringify({
-            model:GROQ_MODEL,
+            model:"llama-3.3-70b-versatile",
             temperature:.7,
             messages:[
                 {
